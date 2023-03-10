@@ -1,3 +1,6 @@
+import './styles/global.css'
+
 export function App() {
-   throw new Error("Deu ruim")
+   
+    return <h1>Hello</h1>
 }
