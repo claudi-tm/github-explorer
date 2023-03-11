@@ -9,12 +9,8 @@ export function RepositoryList() {
 
 	useEffect(() => {
 		fetch("https://api.github.com/orgs/rocketseat/repos")
-			.then((response) => {
-				response.json();
-			})
-			.then((data) => {
-				setReposiotries(data);
-			});
+			.then((response) => response.json())
+			.then((data) => setReposiotries(data));
 	}, []);
 
 	return (
@@ -22,10 +18,12 @@ export function RepositoryList() {
 			<h1>Lista de repositórios</h1>
 
 			<ul>
-				<RepositoryItem
-					title="unform"
-					content="Forms in React Js"
-				></RepositoryItem>
+				{
+					repositories.map((repository) => {
+						return <RepositoryItem key={repository.name} repository={repository}></RepositoryItem>
+					})
+				}
+				                              
 			</ul>
 		</section>
 	);

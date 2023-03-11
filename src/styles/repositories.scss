@@ -9,9 +9,7 @@ section.repository-list {
 		list-style-type: none;
 
 		li {
-			& + li {
-				margin-bottom: 20px;
-			}
+			margin-bottom: 20px;
 
 			p {
 				font-size: 14px;
